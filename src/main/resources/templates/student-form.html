@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/student/processForm}" th:object="${student}" method="post">
+    First name: <input th:field="*{firstName}"/>
+    <br><br>
+    Last name: <input th:field="*{lastName}"/>
+    <br><br>
+    <select th:width="50px" th:field="*{country}">
+        <option value=" " label="Select your Country" />
+        <option value="Brazil" label="Brazil" />
+        <option value="Ireland" label="Ireland" />
+        <option value="France" label="France" />
+        <option value="Germany" label="Germany" />
+        <option value="Argentina" label="Argentina" />
+    </select>
+    <br><br>
+    <p>Language Course</p>
+    <input type="radio" id="java" th:field="*{favLanguage}" value="Java"/>
+    <label th:for="java">Java</label>
+
+    <input type="radio" id="Ruby" th:field="*{favLanguage}" value="Ruby"/>
+    <label th:for="Ruby">Ruby</label>
+
+    <input type="radio" id="php" th:field="*{favLanguage}" value="Php"/>
+    <label th:for="php">PHP</label>
+
+    <input type="radio" id="python" th:field="*{favLanguage}" value="Python"/>
+    <label th:for="python">Python</label>
+
+    <br><br>
+    <p>Which Operation System do you know?</p>
+
+    <input type="checkbox" id="linux" th:field="*{system}" value="Linux"/>
+    <label th:for="linux">Linux</label>
+
+    <input type="checkbox" id="mac" th:field="*{system}" value="Mac OS"/>
+    <label th:for="mac">Mac OS</label>
+
+    <input type="checkbox" id="fedora" th:field="*{system}" value="Fedora"/>
+    <label th:for="fedora">Fedora</label>
+
+    <br><br>
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>

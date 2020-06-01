@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text=" 'Student Name: ' + ${student.firstName} + ' ' +  ${student.lastName}"/>
+<p th:text=" 'Country: ' + ${student.country}"/>
+<p th:text=" 'Course Language: ' + ${student.favLanguage}"/>
+<p>Operations System</p>
+<ul>
+    <c th:each="system : ${student.system}">
+        <li th:text="${system}"/>
+    </c>
+</ul>
+</body>
+</html>
