@@ -18,22 +18,25 @@ public class CustomerController {
 
     //add a method to remove the whitespace
     @InitBinder
-    public void initBinder(WebDataBinder dataBinder){
+    public void initBinder(WebDataBinder dataBinder) {
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
         dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
     }
 
     @RequestMapping("/customerForm")
-    public String showForm(Model model){
+    public String showForm(Model model) {
         model.addAttribute("customer", new Customer());
 
         return "customer-form";
     }
 
     @RequestMapping("/processForm")
-    public String processForm(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-         return "customer-form";
+    public String processForm(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+
+            System.out.println("Biding result: " + bindingResult);
+
+            return "customer-form";
         } else {
             return "customer-process";
         }

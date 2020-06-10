@@ -5,6 +5,9 @@
     <title>Customer Confirmation</title>
 </head>
 <body>
-<p th:text=" 'Customer Name: ' + ${customer.firstName} + ' ' +  ${customer.lastName}"/>
+<p th:text=" 'Customer Name: ' + ${customer.firstName} + ' ' +  ${customer.lastName} + '.'"/>
+<p th:text=" 'Worked Days: ' + ${customer.workday} + '.'"/>
+<p th:text=" 'Postal Code: ' + ${customer.postalCode} + '.'"/>
+<p th:text=" 'Course Code: ' + ${customer.courseCode} + '.'"/>
 </body>
 </html>

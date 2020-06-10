@@ -4,17 +4,40 @@
     <meta charset="UTF-8">
     <title>Customer Form</title>
     <style>
-        .error {color:red}
+        .error {
+            color: red
+        }
     </style>
 </head>
 <body>
 
-<form action="#" th:action="@{/customer/processForm}" th:object="${customer}", method="post">
-    First Name:<input th:field="*{firstName}"/>
-    <br><br>
-    Last Name:<input th:field="*{lastName}"/>
-    <span class="error" th:if="${#fields.hasErrors('lastName')}" th:erros="*{lastName}"/>
-    <br>
+<form action="#" th:action="@{/customer/processForm}" th:object="${customer}" , method="post">
+    <div>
+        First Name:<input th:field="*{firstName}"/>
+
+        <br><br>
+
+        Last Name: <input th:field="*{lastName}"/>
+        <erros th:field="*{lastName}" cssClass="error"/>
+
+        <br><br>
+
+        Worked Days: <input th:field="*{workday}">
+        <erros th:field="*{workday}" cssClass="error"/>
+
+        <br><br>
+
+        Postal Code: <input th:field="*{postalCode}">
+        <erros th:field="*{postalCode}" cssClass="error"/>
+
+        <br><br>
+
+        Course Code: <input th:field="*{courseCode}"/>
+        <erros th:field="*{courseCode}" cssClass="error"/>
+
+        <br><br>
+    </div>
+
     <input type="submit" th:value="Submit">
 
 </form>
